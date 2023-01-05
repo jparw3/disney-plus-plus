@@ -1,7 +1,7 @@
 # Disney Plus Plus
 
 <p align="center">
-   <img width="126px" src="disney-plus-plus/icon.png"/><br><br>
+   <img width="126px" src="https://github.com/jparw3/disney-plus-plus/blob/main/logo.png"/><br><br>
    <b>Autoplay Disney Plus shows while in a watch party.</b><br>
 </p>
 
