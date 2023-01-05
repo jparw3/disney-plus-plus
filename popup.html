@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      body {
+        min-width: 300px;
+        min-height: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="num-episodes">Enter a number between 1 and 10:</label><br>
+      <input type="number" id="num-episodes" min="1" max="10"><br>
+      <input type="checkbox" id="continuous-play">
+      <label for="continuous-play">Continuous play</label><br>
+      <button type="submit">Start Auto Playing</button>
+    </form> 
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          var numEpisodes = document.querySelector('#num-episodes').value;
+          var continuousPlay = document.querySelector('#continuous-play').checked;
+          var code = '';
+          if (continuousPlay) {
+            code = 'while (true) { document.querySelector(".button.button-play.button-play--default").click(); }';
+          } else {
+            code = 'for (var i = 0; i < ' + numEpisodes + '; i++) { document.querySelector(".button.button-play.button-play--default").click(); }';
+          }
+          chrome.tabs.executeScript({
+            code: code
+          });
+          var message = '';
+          if (numEpisodes > 1) {
+            message = 'Playing ' + numEpisodes + ' episodes';
+          } else {
+            message = 'Playing 1 episode';
+          }        
+        });
+      </script>
+      
+
+  </body>
+</html>

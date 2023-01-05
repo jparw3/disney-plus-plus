@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white: hsl(0, 0%, 98%);
+  --background: hsl(228, 22%, 13%);
+  --disney-blue: hsl(207, 100%, 41%);
+  --disney-blue-hover: hsl(208, 100%, 47%);
+  --border: 1px solid hsla(0, 0%, 98%, 0.3);
+  --transition: 0.2s ease-in-out;
+  --height: 48px;
+  --hover-scale: 1.025;
+  --active-scale: 0.975;
+}
+html {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--white);
+}
+body {
+    border-radius: 0.25rem;
+  width: 350px;
+  height: 200px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-height: 200px;
+  padding: 24px;
+}
+h1 {
+  padding: 12px 24px 0 24px;
+}
+input[type="number"] {
+  font-weight: 600;
+  border: none;
+  background-color: #31333d;
+  color: #f9f9f9;
+  border-radius: 0.25rem;
+  padding: 0 24px;
+  height: var(--height);
+  width: 100%;
+  transition: var(--transition);
+  cursor: default;
+}
+
+input[type="number"]:hover {
+  filter: brightness(1.5);
+}
+
+input[type="number"]:focus {
+  border: var(--border);
+  outline: none;
+}
+button[type="submit"] {
+  font-weight: 600;
+  border: none;
+  background-color: var(--disney-blue);
+  color: #f9f9f9;
+  border-radius: 0.25rem;
+  padding: 0 24px;
+  height: var(--height);
+  width: 100%;
+  transition: var(--transition);
+}
+button[type="submit"]:hover {
+  background-color: var(--disney-blue-hover);
+  transition: var(--transition);
+  transform: scale(var(--hover-scale));
+}
+
+button[type="submit"]:active {
+  background-color: var(--disney-blue);
+  transition: var(--transition);
+  transform: scale(var(--active-scale));
+}
